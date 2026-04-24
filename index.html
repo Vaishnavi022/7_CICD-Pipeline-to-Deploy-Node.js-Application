@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CI/CD App</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #78A2D2, #FEFFAF);
+      text-align: center;
+      padding: 50px;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    button {
+      padding: 10px 20px;
+      background: #78A2D2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h2>🚀 CI/CD Pipeline Working</h2>
+    <p id="msg">Click button to test</p>
+    <button onclick="changeText()">Click Me</button>
+  </div>
+
+  <script>
+    function changeText() {
+      document.getElementById("msg").innerText =
+        "🎉 Deployment Successful!";
+    }
+  </script>
+</body>
+</html>
