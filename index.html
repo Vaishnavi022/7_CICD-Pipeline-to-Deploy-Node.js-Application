@@ -1,43 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CI/CD App</title>
+  <meta charset="UTF-8">
+  <title>CI/CD Deployment App</title>
+
   <style>
     body {
-      font-family: Arial;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #78A2D2, #FEFFAF);
-      text-align: center;
-      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .box {
+
+    .card {
       background: white;
-      padding: 30px;
-      border-radius: 10px;
-      display: inline-block;
+      padding: 40px;
+      border-radius: 20px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
     }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
     button {
-      padding: 10px 20px;
       background: #78A2D2;
       color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5c87c9;
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 
 <body>
-  <div class="box">
-    <h2>🚀 CI/CD Pipeline Working</h2>
-    <p id="msg">Click button to test</p>
-    <button onclick="changeText()">Click Me</button>
+
+  <div class="card">
+    <h2>🚀 CI/CD Deployed App</h2>
+    <p>Test your pipeline instantly</p>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+
+    <button onclick="showMessage()">Submit</button>
+
+    <div id="output"></div>
   </div>
 
   <script>
-    function changeText() {
-      document.getElementById("msg").innerText =
-        "🎉 Deployment Successful!";
+    function showMessage() {
+      const name = document.getElementById("nameInput").value;
+
+      if (name === "") {
+        document.getElementById("output").innerText = "⚠️ Please enter your name!";
+      } else {
+        document.getElementById("output").innerText =
+          "Hello " + name + " 🎉 Your CI/CD pipeline is working!";
+      }
     }
   </script>
+
 </body>
 </html>
