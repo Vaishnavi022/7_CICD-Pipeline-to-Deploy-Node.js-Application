@@ -6,9 +6,13 @@ phases:
       - echo "Installing..."
   build:
     commands:
-      - echo "Build complete"
+      - echo "Deploying to S3..."
+
+  post_build:
+    commands:
+      - aws s3 rm s3://nodejs-cicd-deploy-bucket-vaishnavi --recursive
+      - aws s3 cp . s3://nodejs-cicd-deploy-bucket-vaishnavi --recursive
 
 artifacts:
   files:
     - '**/*'
-  discard-paths: yes
