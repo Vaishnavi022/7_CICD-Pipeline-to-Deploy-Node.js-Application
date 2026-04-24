@@ -1,102 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CI/CD Deployment App</title>
+<meta charset="UTF-8">
+<title>🚀 CI/CD Pipeline App</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #78A2D2, #FEFFAF);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+  }
 
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      width: 350px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease-in-out;
-    }
+  .container {
+    padding: 40px;
+  }
 
-    h2 {
-      margin-bottom: 10px;
-      color: #333;
-    }
+  h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 
-    p {
-      color: #666;
-      margin-bottom: 20px;
-    }
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
+  }
 
-    input {
-      width: 90%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-      font-size: 14px;
-    }
+  input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+    font-size: 14px;
+  }
 
-    button {
-      background: #78A2D2;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  button {
+    background: #ff7eb3;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
 
-    button:hover {
-      background: #5c87c9;
-      transform: scale(1.05);
-    }
+  button:hover {
+    background: #ff4e91;
+    transform: scale(1.1);
+  }
 
-    #output {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #333;
-    }
+  #output {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  .status {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+</style>
 </head>
 
 <body>
 
+<div class="container">
+
+  <h1>🚀 CI/CD Pipeline Dashboard</h1>
+  <p>⚡ Auto Deployment with AWS</p>
+
   <div class="card">
-    <h2>🚀 CI/CD Deployed App</h2>
-    <p>Test your pipeline instantly</p>
 
-    <input type="text" id="nameInput" placeholder="Enter your name">
+    <h2>🎉 Deployment Successful</h2>
+    <p>✅ Your pipeline is working perfectly!</p>
 
-    <button onclick="showMessage()">Submit</button>
+    <input type="text" id="nameInput" placeholder="👤 Enter your name">
+
+    <br>
+
+    <button onclick="showMessage()">🚀 Test Now</button>
 
     <div id="output"></div>
+
+    <div class="status">
+      🌐 Deployed on: Amazon S3 <br>
+      🔄 Auto Trigger: Enabled <br>
+      ⚙️ CI/CD: Active
+    </div>
+
   </div>
 
-  <script>
-    function showMessage() {
-      const name = document.getElementById("nameInput").value;
+</div>
 
-      if (name === "") {
-        document.getElementById("output").innerText = "⚠️ Please enter your name!";
-      } else {
-        document.getElementById("output").innerText =
-          "Hello " + name + " 🎉 Your CI/CD pipeline is working!";
-      }
-    }
-  </script>
+<script>
+function showMessage() {
+  const name = document.getElementById("nameInput").value;
+
+  if (name === "") {
+    document.getElementById("output").innerText = "⚠️ Please enter your name!";
+  } else {
+    document.getElementById("output").innerText =
+      "👋 Hello " + name + "! 🎉 CI/CD is working perfectly 🚀🔥";
+  }
+}
+</script>
 
 </body>
 </html>
